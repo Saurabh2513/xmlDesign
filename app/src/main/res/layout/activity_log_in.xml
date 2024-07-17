@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.ui.LogInActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/foreground"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/login" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="WelCome Back!!"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="LogIn"
+            android:textColor="#3CFFC0"
+            android:textSize="25sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailIdTxt"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#CCCCCC"
+            android:hint="Email Address"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textColorHint="@color/white"
+            android:gravity="center"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+        />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PassTxt"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#CCCCCC"
+            android:hint="Password"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textColorHint="@color/white"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+        />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            style="@style/Button.new"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp"
+            android:backgroundTint="@color/sa"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="Log In"
+            android:textSize="20sp"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/createAcTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="Create Account!"
+            android:textColor="#6BA6FF"
+            android:textSize="15sp"
+            android:clickable="true"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

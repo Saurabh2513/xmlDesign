@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomCardCorners" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners</item>
+    </style>
+    <style name="ShapeAppearance_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="shapeCornerFamily">cut</item>
+        <item name="cornerSizeTopLeft">65dp</item>
+        <item name="cornerSizeTopRight">65dp</item>
+    </style>
+    <style name="Button.new" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/sa</item>
+    </style>
+
+</resources>
