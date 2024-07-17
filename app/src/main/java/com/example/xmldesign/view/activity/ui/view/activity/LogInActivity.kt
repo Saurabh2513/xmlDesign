@@ -1,11 +1,10 @@
-package com.example.xmldesign.view.activity.ui
+package com.example.xmldesign.view.activity.ui.view.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.xmldesign.databinding.ActivityLogInBinding
-import com.example.xmldesign.view.activity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LogInActivity : AppCompatActivity() {

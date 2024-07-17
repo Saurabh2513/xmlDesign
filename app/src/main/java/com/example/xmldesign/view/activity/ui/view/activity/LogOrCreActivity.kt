@@ -1,11 +1,10 @@
-package com.example.xmldesign.view.activity
+package com.example.xmldesign.view.activity.ui.view.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.xmldesign.R
-import com.example.xmldesign.view.activity.ui.LogInActivity
 
 class LogOrCreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +13,7 @@ class LogOrCreActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.bookNowBtn)
 
         btn.setOnClickListener {
-            val intent = Intent(this@LogOrCreActivity,LogInActivity::class.java)
+            val intent = Intent(this@LogOrCreActivity, LogInActivity::class.java)
             startActivity(intent)
             finish()
         }

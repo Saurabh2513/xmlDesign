@@ -13,17 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.XMLDesign"
         tools:targetApi="31">
+        <service
+            android:name=".view.activity.network.StopwatchService"
+            android:exported="false"/>
         <activity
-            android:name=".view.activity.ui.CreateAccountActivity"
+            android:name=".view.activity.ui.view.activity.CreateAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.ui.LogInActivity"
+            android:name=".view.activity.ui.view.activity.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.LogOrCreActivity"
+            android:name=".view.activity.ui.view.activity.LogOrCreActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.SplashScreenActivity"
+            android:name=".view.activity.ui.view.activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.MainActivity"
+            android:name=".view.activity.ui.view.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,5 +48,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 
 </manifest>

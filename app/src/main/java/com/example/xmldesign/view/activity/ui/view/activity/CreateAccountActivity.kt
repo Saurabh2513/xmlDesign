@@ -1,4 +1,4 @@
-package com.example.xmldesign.view.activity.ui
+package com.example.xmldesign.view.activity.ui.view.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -55,12 +55,15 @@ class CreateAccountActivity : AppCompatActivity() {
         }
         auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
             if (it.isSuccessful) {
-                val intent = Intent(this@CreateAccountActivity,LogInActivity::class.java)
+                val intent = Intent(this@CreateAccountActivity, MainActivity::class.java)
+
                 startActivity(intent)
                 finish()
                 Toast.makeText(this, "Successfully Singed Up", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
+                val intent = Intent(this@CreateAccountActivity, LogInActivity::class.java)
+                startActivity(intent)
                 Toast.makeText(this, "Singed Up Failed!", Toast.LENGTH_SHORT).show()
             }
         }

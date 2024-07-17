@@ -5,23 +5,98 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.MainActivity">
+    tools:context=".view.activity.ui.view.activity.MainActivity">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foreground="@drawable/foreground_design"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/creat"
-        />
+        app:srcCompat="@drawable/creat" />
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/baseline_logout_24" />
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello..."
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
         android:layout_marginTop="80dp"
         android:fontFamily="@font/abril_fatface"
-        />
+        android:gravity="center"
+        android:text="Hello..."
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/recyclerview"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerview"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:text="00:00:00"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+
+                android:id="@+id/btnStop"
+                android:text="START"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/sa"
+                android:fontFamily="@font/abril_fatface"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStart"
+                android:text="STOP"
+                android:backgroundTint="@color/sa"
+                android:fontFamily="@font/abril_fatface"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
