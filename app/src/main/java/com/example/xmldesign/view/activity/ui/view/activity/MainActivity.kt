@@ -19,7 +19,6 @@ import com.example.xmldesign.view.activity.network.SharedPreferencesHelper
 import com.example.xmldesign.view.activity.network.StopwatchService
 import com.example.xmldesign.view.activity.ui.view.adapter.UserAdapter
 import com.google.firebase.auth.FirebaseAuth
-import kotlin.text.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -50,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     private val timeUpdateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent != null && intent.hasExtra("elapsedTime")) {
@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferencesHelper = SharedPreferencesHelper(this)
 
-
         recyclerView = findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
@@ -75,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = userAdapter
 
         fetchUserEmails()
-        startStopwatch()
+        //  startStopwatch()
         binding.btnStart.setOnClickListener {
             stopStopwatch()
         }
@@ -85,15 +84,9 @@ class MainActivity : AppCompatActivity() {
         binding.logout.setOnClickListener {
             logout()
         }
-        LocalBroadcastManager.getInstance(this).registerReceiver(timeUpdateReceiver, IntentFilter("StopwatchUpdate"))
+        LocalBroadcastManager.getInstance(this)
+            .registerReceiver(timeUpdateReceiver, IntentFilter("StopwatchUpdate"))
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(timeUpdateReceiver)
-    }
-
-
-
 
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -112,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             updateTimeRunnable.run()
         }
     }
+
     private fun startStopwatch() {
         val intent = Intent(this, StopwatchService::class.java)
         intent.action = "START"
@@ -163,5 +157,10 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(timeUpdateReceiver)
     }
 }
